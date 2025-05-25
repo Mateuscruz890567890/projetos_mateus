@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio - Restaurante Delícias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .menu-detail {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .menu-detail img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .menu-detail h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .menu-detail .description {
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .menu-detail .price {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 2rem;
+        }
+
+        .menu-detail .ingredients {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .menu-detail .ingredients h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .menu-detail .ingredients ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu-detail .ingredients li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .back-button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Restaurante Delícias</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <div class="mobile-logo">
+                    <div class="logo-circle">
+                        <span class="logo-text">RD</span>
+                    </div>
+                </div>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart-button">
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </div>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="price-breakdown">
+                <div class="price-row">
+                    <span>Subtotal:</span>
+                    <span class="subtotal-amount">R$ 0,00</span>
+                </div>
+                <div class="price-row">
+                    <span>Taxa de Serviço (10%):</span>
+                    <span class="service-tax">R$ 0,00</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total:</span>
+                    <span class="total-amount">R$ 0,00</span>
+                </div>
+            </div>
+            <button class="checkout-button">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <main>
+        <section class="menu-section">
+            <h2>Nosso Cardápio Completo</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Filé à Parmegiana">
+                    <h3>Filé à Parmegiana</h3>
+                    <p>Filé mignon empanado com molho de tomate e queijo <span class="price">R$ 89,90</span></p>
+                    <button class="add-to-cart" data-name="Filé à Parmegiana" data-price="89.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Risoto de Cogumelos">
+                    <h3>Risoto de Cogumelos</h3>
+                    <p>Risoto cremoso com mix de cogumelos frescos <span class="price">R$ 75,90</span></p>
+                    <button class="add-to-cart" data-name="Risoto de Cogumelos" data-price="75.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Peixe Grelhado">
+                    <h3>Peixe Grelhado</h3>
+                    <p>Peixe fresco grelhado com legumes da estação <span class="price">R$ 82,90</span></p>
+                    <button class="add-to-cart" data-name="Peixe Grelhado" data-price="82.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Picanha Grelhada">
+                    <h3>Picanha Grelhada</h3>
+                    <p>Picanha grelhada com arroz, feijão e farofa <span class="price">R$ 95,90</span></p>
+                    <button class="add-to-cart" data-name="Picanha Grelhada" data-price="95.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Frango à Parmegiana">
+                    <h3>Frango à Parmegiana</h3>
+                    <p>Peito de frango empanado com molho de tomate e queijo <span class="price">R$ 69,90</span></p>
+                    <button class="add-to-cart" data-name="Frango à Parmegiana" data-price="69.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Salada Caesar">
+                    <h3>Salada Caesar</h3>
+                    <p>Mix de folhas, frango grelhado, croutons e molho Caesar <span class="price">R$ 59,90</span></p>
+                    <button class="add-to-cart" data-name="Salada Caesar" data-price="59.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Lasanha à Bolonhesa">
+                    <h3>Lasanha à Bolonhesa</h3>
+                    <p>Lasanha com molho bolonhesa e queijo gratinado <span class="price">R$ 79,90</span></p>
+                    <button class="add-to-cart" data-name="Lasanha à Bolonhesa" data-price="79.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Strogonoff de Frango">
+                    <h3>Strogonoff de Frango</h3>
+                    <p>Frango com molho de creme de leite e champignons <span class="price">R$ 72,90</span></p>
+                    <button class="add-to-cart" data-name="Strogonoff de Frango" data-price="72.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Camarão ao Alho e Óleo">
+                    <h3>Camarão ao Alho e Óleo</h3>
+                    <p>Camarões refogados com alho e óleo, acompanha arroz <span class="price">R$ 98,90</span></p>
+                    <button class="add-to-cart" data-name="Camarão ao Alho e Óleo" data-price="98.90">
+                        <i class="fas fa-plus"></i> Adicionar
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Restaurante Delícias. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

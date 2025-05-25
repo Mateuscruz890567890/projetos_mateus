@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Delícias</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Restaurante Delícias</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="menu">
+                <div class="mobile-logo">
+                    <div class="logo-circle">
+                        <span class="logo-text">RD</span>
+                    </div>
+                </div>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Cardápio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="cart-button">
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+    </div>
+
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Seu Pedido</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-footer">
+            <div class="price-breakdown">
+                <div class="price-row">
+                    <span>Subtotal:</span>
+                    <span class="subtotal-amount">R$ 0,00</span>
+                </div>
+                <div class="price-row">
+                    <span>Taxa de Serviço (10%):</span>
+                    <span class="service-tax">R$ 0,00</span>
+                </div>
+                <div class="price-row total">
+                    <span>Total:</span>
+                    <span class="total-amount">R$ 0,00</span>
+                </div>
+            </div>
+            <button class="checkout-button">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div class="cart-overlay"></div>
+
+    <div class="banner-container">
+        <div class="banner">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4" alt="Restaurante 1">
+                <div class="slide-content">
+                    <h2>Bem-vindo ao Restaurante Delícias</h2>
+                    <p>Os melhores sabores da culinária brasileira</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Restaurante 2">
+                <div class="slide-content">
+                    <h2>Ambiente Acolhedor</h2>
+                    <p>O lugar perfeito para suas refeições</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0" alt="Restaurante 3">
+                <div class="slide-content">
+                    <h2>Pratos Especiais</h2>
+                    <p>Chefes renomados e ingredientes selecionados</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev">&#10094;</button>
+        <button class="next">&#10095;</button>
+    </div>
+
+    <main>
+        <section id="menu" class="menu-section">
+            <h2>Nosso Cardápio</h2>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <a href="cardapio.html?id=file-parmegiana">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947" alt="Prato 1">
+                        <h3>Filé à Parmegiana</h3>
+                        <p>Filé mignon empanado com molho de tomate e queijo <span class="price">R$ 89,90</span></p>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="cardapio.html?id=risoto-cogumelos">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Prato 2">
+                        <h3>Risoto de Cogumelos</h3>
+                        <p>Risoto cremoso com mix de cogumelos frescos <span class="price">R$ 75,90</span></p>
+                    </a>
+                </div>
+                <div class="menu-item">
+                    <a href="cardapio.html?id=peixe-grelhado">
+                        <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8" alt="Prato 3">
+                        <h3>Peixe Grelhado</h3>
+                        <p>Peixe fresco grelhado com legumes da estação <span class="price">R$ 82,90</span></p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="about-section">
+            <h2>Sobre Nós</h2>
+            <p>O Restaurante Delícias é um lugar especial onde a tradição se encontra com a inovação. Nossa equipe de chefs prepara pratos únicos com ingredientes frescos e de alta qualidade.</p>
+        </section>
+
+        <section id="contato" class="contact-section">
+            <h2>Contato</h2>
+            <div class="contact-info">
+                <p>📍 Rua das Delícias, 123</p>
+                <p>📞 (11) 1234-5678</p>
+                <p>✉️ contato@restaurantedelicias.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Restaurante Delícias. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
